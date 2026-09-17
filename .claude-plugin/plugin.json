@@ -1,6 +1,6 @@
 {
   "name": "skills-fr",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Compétences d'agent en français. Traductions soignées de skills reconnues, à commencer par /apprendre, qui transforme un dossier en espace d'apprentissage suivi de session en session.",
   "author": {
     "name": "Aurélien Damoizeau",
