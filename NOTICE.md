@@ -68,13 +68,32 @@ Les artefacts que la compétence produit sont nommés en français, puisque l'ap
 
 Les noms de dossiers restent sans accent. `lecons` et non `leçons`, `reference` et non `référence`. Un dossier accentué finit toujours par casser quelque part, un shell, une archive zip, un chemin Windows. Les fichiers Markdown que l'apprenant ouvre, eux, gardent leurs accents.
 
+## Portabilité entre agents
+
+L'original est déjà indépendant de l'éditeur, c'est du Markdown au format [Agent Skills](https://code.claude.com/docs/en/skills). La traduction garde cette propriété et la rend explicite.
+
+`name` et `description` sont les deux seuls champs du standard. Ils portent tout le sens, et la compétence fonctionne sur n'importe quel agent conforme avec eux seuls. Le reste du frontmatter est un supplément que les agents qui ne le connaissent pas ignorent.
+
+| Champ | Lu par | Rôle |
+|---|---|---|
+| `name`, `description` | tous | le standard |
+| `disable-model-invocation` | Claude Code | empêche l'invocation automatique |
+| `argument-hint` | Claude Code | le texte grisé après la commande |
+| `agents/openai.yaml` | Codex | métadonnées d'interface et `allow_implicit_invocation` |
+| `upstream_*` | personne | provenance, pour les humains |
+
+`disable-model-invocation: true` et `allow_implicit_invocation: false` disent la même chose dans deux dialectes. La compétence ne part pas toute seule, l'utilisateur la demande. C'était déjà l'intention de l'original, qui portait les deux.
+
+Les emplacements d'installation diffèrent d'un agent à l'autre, `.claude/skills/` pour Claude Code, `.agents/skills/` pour Codex. Le contenu déposé, lui, est identique. Le [README](./README.md) donne le tableau complet.
+
 ## Écarts assumés
 
-Trois changements de fond, tout le reste est une traduction fidèle.
+Quatre changements de fond, tout le reste est une traduction fidèle.
 
 1. **Le lien vers `FORMAT-GLOSSAIRE.md` a été ajouté.** L'original livre bien `GLOSSARY-FORMAT.md` mais ne le référence nulle part depuis `SKILL.md`, donc l'agent ne le trouve jamais. Le lien est posé dans la section sur les documents de référence.
 2. **Une phrase sur les noms de dossiers sans accent a été ajoutée** au début de `SKILL.md`. Elle n'a pas d'équivalent en anglais, où la question ne se pose pas.
 3. **Les tirets cadratins ont été supprimés**, ainsi que les deux-points employés comme connecteurs en milieu de phrase. La ponctuation française porte les mêmes liaisons avec une virgule ou un point.
+4. **La `description` précise qu'il faut une demande explicite de l'utilisateur.** L'original s'en remet à `disable-model-invocation` et à `allow_implicit_invocation`, que Claude Code et Codex comprennent. Les autres agents n'ont ni l'un ni l'autre, et la description est alors le seul garde-fou. Dire la condition en clair la rend portable.
 
 Les exemples du domaine de la musculation (hypertrophie, surcharge progressive, RPE) et les sources anglaises citées en exemple ont été gardés tels quels. Un exemple sert à montrer une forme, le remplacer par un exemple français n'aurait rien appris de plus.
 

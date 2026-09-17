@@ -1,8 +1,13 @@
 ---
+# Standard Agent Skills, lu par tous les agents
 name: apprendre
-description: Enseigne une compétence ou un concept à l'utilisateur, dans cet espace de travail.
+description: Enseigne une compétence ou un concept à l'utilisateur, sur plusieurs sessions, dans un espace de travail suivi. À n'employer que si l'utilisateur demande explicitement à apprendre quelque chose.
+
+# Claude Code, ignoré partout ailleurs. L'équivalent Codex est dans agents/openai.yaml
 disable-model-invocation: true
 argument-hint: "Que voulez-vous apprendre ?"
+
+# Provenance, pour les humains
 upstream_repo: mattpocock/skills
 upstream_path: skills/productivity/teach
 upstream_commit: 74ca5fe077456a0b3b2f5310cf9430999fd0b5fd
