@@ -1,0 +1,24 @@
+{
+  "name": "skills-fr",
+  "version": "0.1.0",
+  "description": "Compétences d'agent en français. Traductions soignées de skills reconnues, à commencer par /apprendre, qui transforme un dossier en espace d'apprentissage suivi de session en session.",
+  "author": {
+    "name": "Aurélien Damoizeau",
+    "url": "https://github.com/bretzay"
+  },
+  "homepage": "https://github.com/bretzay/skills-fr",
+  "repository": "https://github.com/bretzay/skills-fr",
+  "license": "MIT",
+  "keywords": [
+    "francais",
+    "french",
+    "apprentissage",
+    "pedagogie",
+    "enseignement",
+    "skills",
+    "claude-code"
+  ],
+  "skills": [
+    "./skills/apprendre"
+  ]
+}

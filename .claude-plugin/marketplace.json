@@ -1,0 +1,23 @@
+{
+  "name": "bretzay",
+  "owner": {
+    "name": "Aurélien Damoizeau",
+    "url": "https://github.com/bretzay"
+  },
+  "description": "Compétences d'agent en français, installables dans Claude Code.",
+  "plugins": [
+    {
+      "name": "skills-fr",
+      "source": "./",
+      "description": "Compétences d'agent en français. Commence par /apprendre, la traduction de la skill teach de Matt Pocock.",
+      "category": "productivity",
+      "keywords": [
+        "francais",
+        "french",
+        "apprentissage",
+        "pedagogie",
+        "teach"
+      ]
+    }
+  ]
+}
